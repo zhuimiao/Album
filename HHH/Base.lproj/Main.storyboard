@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kiz-N1-jD2">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="y3S-fb-9WG">
+            <objects>
+                <viewController id="kiz-N1-jD2" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SQs-NI-oEB"/>
+                        <viewControllerLayoutGuide type="bottom" id="WrU-Ny-6w8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XNr-Ss-tSb">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lena" translatesAutoresizingMaskIntoConstraints="NO" id="fj7-GX-gEX">
+                                <rect key="frame" x="256" y="128" width="512" height="512"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96863186359405518" green="0.97250783443450928" blue="0.97646653652191162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fj7-GX-gEX" firstAttribute="centerY" secondItem="XNr-Ss-tSb" secondAttribute="centerY" id="5M9-94-wXw"/>
+                            <constraint firstItem="fj7-GX-gEX" firstAttribute="centerX" secondItem="XNr-Ss-tSb" secondAttribute="centerX" id="w42-5a-Woo"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FsW-vZ-Npf" appends="YES" id="n5r-RP-KC2"/>
+                            <outletCollection property="gestureRecognizers" destination="RTB-4N-861" appends="YES" id="iDz-FW-uTg"/>
+                            <outletCollection property="gestureRecognizers" destination="HHy-T4-cEG" appends="YES" id="Gvi-dJ-DHB"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="fj7-GX-gEX" id="t9P-Ie-rK7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrK-V4-eJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="FsW-vZ-Npf">
+                    <connections>
+                        <action selector="configZoomDefault:" destination="kiz-N1-jD2" id="wZK-da-uhR"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer delaysTouchesEnded="NO" minimumNumberOfTouches="1" maximumNumberOfTouches="2" id="RTB-4N-861">
+                    <connections>
+                        <action selector="pan:" destination="kiz-N1-jD2" id="dHz-6T-rn6"/>
+                        <outlet property="delegate" destination="kiz-N1-jD2" id="kqC-Cp-ueH"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer delaysTouchesEnded="NO" id="HHy-T4-cEG">
+                    <connections>
+                        <action selector="pinch:" destination="kiz-N1-jD2" id="e2l-jh-5Zo"/>
+                        <outlet property="delegate" destination="kiz-N1-jD2" id="G7m-IE-bW3"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-201.5625" y="172.65625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lena" width="512" height="512"/>
+    </resources>
+</document>
